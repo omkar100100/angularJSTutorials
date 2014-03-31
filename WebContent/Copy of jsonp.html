@@ -1,0 +1,15 @@
+<!doctype html>
+<html >
+  <head>
+    <script src="lib/angular.js"></script> 
+    <script src="js/jsonp.js"></script>
+  </head>
+  <body ng-app="jsonp" ng-controller="JSONPCtrl">
+<div>
+    <button ng-click="jsonpGreet()">jsonp Greet</button>
+    <pre>
+        {{greeting | json}}
+    </pre>
+</div>
+</body>
+</html>

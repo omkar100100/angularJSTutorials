@@ -1,0 +1,27 @@
+<html>
+<head>
+    
+    <!-- Order of loading these libraries are important,DEMONSTARTING HERE IS ONLY DEPENDENCY INJECTION ,NOT ASYNC LIBRARY LOADING -->
+    <script src="lib/angular.js"></script>
+    <script src="js/app_7.js"></script>
+</head>
+
+<body  >
+<div ng-app="notificationsApp" ng-controller="NotificationsCtrl">
+	<div  class="well">
+	    <form>
+	        <textarea ng-model="notification" cols="40" rows="3" class="span6"></textarea><br>
+	        <button class="btn btn-primary" ng-click="addNotification()">Add</button>
+	    </form>
+	</div>
+	<table class="table table-striped table-bordered">
+	    <tr>
+	        <th>Notifications</th>
+	    </tr>
+	    <tr ng-repeat="notification in getNotifications()">
+	        <td>{{notification}}</td>
+	    </tr>
+	</table>
+</div>
+</body>
+</html>

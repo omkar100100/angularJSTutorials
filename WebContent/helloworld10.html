@@ -1,0 +1,24 @@
+<html>
+<head>
+    
+    <!-- Order of loading these libraries are important,DEMONSTARTING HERE IS ONLY DEPENDENCY INJECTION ,NOT ASYNC LIBRARY LOADING -->
+    <script src="lib/angular.js"></script>
+  <link rel="stylesheet" href="lib/jasmine.css">
+  <script src="lib/jasmine.js"></script>
+  <script src="lib/jasmine-html.js"></script>
+  <script src="lib/angular-mocks.js"></script>
+  
+  
+</head>
+
+<body>
+  <script src="js/helloworld10.js"></script>
+  <script src="js/helloworld10_spec.js"></script>
+  <b>Jasmin Report</b>
+  <script>
+	  var jasmineEnv = jasmine.getEnv();
+	  jasmineEnv.addReporter(new jasmine.HtmlReporter());
+	  jasmineEnv.execute();
+  </script>
+</body>
+</html>

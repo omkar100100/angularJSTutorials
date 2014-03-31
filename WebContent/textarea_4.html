@@ -1,0 +1,30 @@
+<!doctype html>
+<html >
+  <head>
+    <script src="lib/angular.js"></script>
+  </head>
+  <body  >
+	  	
+  	<div ng-app ng-controller="textAreaCtrl">
+<!--   		<input type="text" ng-model="data">{{data}}</input>  -->
+   	    Remaining Text 
+   	     
+   		<textarea ng-disabled="!hasValidLength()" ng-model="text1">{{text1}}
+   			{{remaining()}}
+   		</textarea> 
+  	</div>
+	     
+     <script type="text/javascript">
+       var textAreaCtrl=function($scope){
+    	   $scope.remaining=function(){
+    		   return 10-$scope.text1.length();
+    	   };
+    	   
+    	   $scope.hasValidLength=function(){
+    		   return 10-$scope.text1.length()>1?1:0
+    	   };
+       };
+     </script>  
+
+  </body>
+</html>

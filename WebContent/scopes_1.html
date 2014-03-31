@@ -1,0 +1,27 @@
+<!doctype html>
+<html >
+  <head>
+    <script src="lib/angular.js"></script>
+  </head>
+  <body ng-app ng-controller="populationCtrl">
+  	Total Population:{{population}}
+	<div ng-repeat="item in census">
+	   Country Name:{{item.countryName}} ,Population:{{item.population}}
+	   World's Population Percentage={{worldsPercentage(item.population)}}
+	</div>
+	     
+     <script type="text/javascript">
+       var populationCtrl=function($scope){
+    	   $scope.population=600;
+    	   $scope.census=[{countryName:'india',population:300},
+    	                  {countryName:'china',population:100},
+    	                  {countryName:'srilanka',population:200}];
+    	
+    	   $scope.worldsPercentage=function(countryPopulation){
+        	   return (countryPopulation/$scope.population)*100;
+           };
+       };
+       
+       
+     </script>  </body>
+</html>

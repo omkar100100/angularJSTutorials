@@ -1,0 +1,21 @@
+<!doctype html>
+<html >
+  <head>
+    <script src="lib/angular.js"></script>
+  </head>
+  <body ng-app ng-init="person={name:'Raju'}">
+	<h1>Hello, {{person.name}}</h1>
+	<div ng-controller="HelloCtrl">
+		Say hello to: <input type="text" ng-model="person.name">
+		<h2>Inside Ctrl Hello, {{person.name}}!</h2>
+<!-- 		<h1>Value from Parent Scope {{$parent.name}}</h1> -->
+	</div>
+	
+	<script type="text/javascript">
+		var HelloCtrl = function ($scope) {
+			var obj={name:'Other name'};
+			$scope.person=obj;
+		};
+	</script>
+</body>
+</html>
